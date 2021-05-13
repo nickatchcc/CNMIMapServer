@@ -34,6 +34,10 @@ df = pd.read_csv(r'\File_Location\input.csv')
 df.to_json(r'\Output_File_Location\output.json')
 ```
 
+# Troubleshooting
+```sudo iptables -A INPUT -m state --state NEW -p tcp --dport 14515 -j ACCEPT```
+```sudo iptables -A OUTPUT -p udp -m udp --dport 53 -j ACCEPT```
+
 # Demo:
 Once the application is running on the local machine, you can follow this URL
 
