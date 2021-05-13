@@ -16,10 +16,14 @@ plotly.io.orca.config.executable = r"C:\Users\username\AppData\Local\Programs\or
 import datetime as d
 
 # Initialize Flask
-app = Flask('__main__', static_folder=os.path.abspath(r'C:\source\repos\CNMIMapServer')) # application server specific
+app = Flask('__main__', static_folder=os.path.abspath(r'C:\source\repos\CNMIMapServer'), static_url_path='') # application server specific
 api = Api(app)
 parser = reqparse.RequestParser()
 parser.add_argument('json')
+
+class home(Resource):
+    def get(self):
+        return app.send_static_file(r'csv2json.html')
 
 class cnmi_map(Resource):
 
@@ -40,7 +44,7 @@ class cnmi_map(Resource):
         fig.update_layout(autosize=True, width=1900, height=750,)
         for i in range(0, len(cnmi["features"])): 
             print(cnmi["features"][i]["properties"]["NAMELSAD"])
-        fig.write_html(r'.\choropleth.html')
+        fig.write_html(r'choropleth.html')
         self.injectJS()
 
     def get(self):
@@ -48,11 +52,9 @@ class cnmi_map(Resource):
         self.map(data['json'])
         return app.send_static_file('choropleth.html')
       
-    def injectJS(self):
+    def injectJS(self): #code credit: https://stackoverflow.com/a/51171077
         a = """<script type="module">
-        </script>"""
-        #function CSVToArray(r,e){e=e||",";for(var n=new RegExp("(\\"+e+'|\\r?\\n|\\r|^)(?:"([^"]*(?:""[^"]*)*)"|([^"\\'+e+"\\r\\n]*))","gi"),g=[[]],a=null;a=n.exec(r);){var l=a[1];if(l.length&&l!=e&&g.push([]),a[2])var t=a[2].replace(new RegExp('""',"g"),'"');else t=a[3];g[g.length-1].push(t)}return g}function CSV2JSON(r){for(var e=CSVToArray(r),n=[],g=1;g<e.length;g++){n[g-1]={};for(var a=0;a<e[0].length&&a<e[g].length;a++){var l=e[0][a];n[g-1][l]=e[g][a]}}return JSON.stringify(n).replace(/},/g,"},\r\n")}
-        
+        </script>"""        
         with open(r'.\choropleth.html', 'r+') as f:
             lines = f.readlines()
             for i, line in enumerate(lines):
