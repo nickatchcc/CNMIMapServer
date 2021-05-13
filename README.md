@@ -36,6 +36,7 @@ df.to_json(r'\Output_File_Location\output.json')
 
 # Troubleshooting
 ```sudo iptables -A INPUT -m state --state NEW -p tcp --dport 14515 -j ACCEPT```
+
 ```sudo iptables -A OUTPUT -p udp -m udp --dport 53 -j ACCEPT```
 
 # Demo:
