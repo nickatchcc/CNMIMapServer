@@ -60,4 +60,4 @@ http://localhost:5000/api/cnmi_map?json=[%20{%20%22NAMELSAD%22:%20%22Achugao%20v
 
 # Acknowledgements
 This project was made possible by Bell, Tommy, and Victoria (from the CHCC); as well as Justin, and Fermin (from the CSD of Commerce).
-Thank you for the help.
+Thank you!
