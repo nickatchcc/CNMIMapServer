@@ -65,4 +65,4 @@ class cnmi_map(Resource):
 api.add_resource(cnmi_map, '/api/cnmi_map')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=14515)
