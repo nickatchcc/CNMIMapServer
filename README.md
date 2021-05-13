@@ -17,7 +17,7 @@ e.g.
 ```C:\Users\username> pip install -r requirements.txt```
 
 # Usage
-When the CNMIMapServer.py file is running on the server, http connections will be accepted on port 14515, and JSON encoded excel tables can be used to visualize data by submitting a request from your browser using the following URL format:
+When the CNMIMapServer.py file is running on the server, http connections will be accepted on port 14515 (if not, please refer to "Troubleshooting"), and JSON encoded excel tables can be used to visualize data by submitting a request from your browser using the following URL format:
 
 http://localhost:14515/api/cnmi_map?json=JSON_STRING_GOES_HERE
 
