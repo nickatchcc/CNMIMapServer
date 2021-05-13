@@ -11,6 +11,15 @@ When the CNMIMapServer.py file is running on the server, http connections will b
 
 http://localhost:14515/api/cnmi_map?json=JSON_STRING_GOES_HERE
 
+# Data preparation
+Converting a .csv file to a .json string can be done easily at the following URL:
+https://csvjson.com/csv2json
+
+Note: it can also be done locally via the following commands in a python console:
+import pandas as pd
+df = pd.read_csv(r'\File_Location\input.csv')
+df.to_json(r'\Output_File_Location\output.json')
+
 # Demo:
 Once the application is running on the local machine, you can follow this URL
 
