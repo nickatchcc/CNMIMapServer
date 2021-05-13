@@ -23,6 +23,7 @@ http://localhost:14515/api/cnmi_map?json=JSON_STRING_GOES_HERE
 
 # Data preparation
 Converting a .csv file to a .json string can be done easily at the following URL:
+
 https://csvjson.com/csv2json
 
 Note: it can also be done locally via the following commands in a python console:
