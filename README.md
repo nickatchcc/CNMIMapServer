@@ -2,6 +2,10 @@
 Small web application to create choropleth maps of the CNMI serverside.
 
 # Installation
+Simple Explaination:
+```pip install -r requirements.txt```
+
+Full Description
 1) Git clone to a local directory from cmd.exe (e.g. 'C:\Users\username> git clone https://github.com/nickatchcc/CNMIMapServer.git')
 2) cd to the directory (e.g. 'C:\Users\username> cd CNMIMapServer')
 3) Install dependencies with pip (e.g. 'C:\Users\username> pip install -r requirements.txt')
@@ -16,9 +20,12 @@ Converting a .csv file to a .json string can be done easily at the following URL
 https://csvjson.com/csv2json
 
 Note: it can also be done locally via the following commands in a python console:
+
+```
 import pandas as pd
 df = pd.read_csv(r'\File_Location\input.csv')
 df.to_json(r'\Output_File_Location\output.json')
+```
 
 # Demo:
 Once the application is running on the local machine, you can follow this URL
