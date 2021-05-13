@@ -26,7 +26,7 @@ http://localhost:14515/api/cnmi_map?json=JSON_STRING_GOES_HERE
 CSV files can now be directly uploaded directly here:
 http://localhost:14515
 
-##TO DO: allow pasting directly into the ace.js text editor to update the urlstring
+(Future goal: allow pasting directly into the ace.js text editor to update the urlstring)
 
 # Data preparation
 Converting a .csv file to a .json string can be done easily at the following URL:
