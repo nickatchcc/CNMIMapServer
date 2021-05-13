@@ -5,3 +5,6 @@ requests==2.25.1
 Flask-RESTful==0.3.8
 pyodbc==4.0.30
 orca==1.6
+numpy==1.20.2
+pandas==1.2.4
+pip==21.1.1
