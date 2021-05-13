@@ -26,7 +26,7 @@ class cnmi_map(Resource):
     def map(self,values):
         content = request.json
         df = pd.read_json(values)
-        with open('place.json') as f: cnmi = json.load(f)
+        with open('rota_saipan_tinian.json') as f: cnmi = json.load(f)
         cnmi["features"][0]['properties']
         #max_value = 1.0 # Default setting is 1.0 as max value
         max_value = df["Value"].max()
