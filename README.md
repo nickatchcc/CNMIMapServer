@@ -21,6 +21,12 @@ When the CNMIMapServer.py file is running on the server, http connections will b
 
 http://localhost:14515/api/cnmi_map?json=JSON_STRING_GOES_HERE
 
+**UPDATE 5/13/2021:**
+
+CSV files can now be directly uploaded directly here:
+http://localhost:14515
+##TO DO: allow paste into the ace.js text editor to update the urlstring
+
 # Data preparation
 Converting a .csv file to a .json string can be done easily at the following URL:
 
