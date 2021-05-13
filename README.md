@@ -1,3 +1,5 @@
+![A data visualization tool for the CNMI](https://www.chcc.gov.mp/img/chccHeader.png)
+
 # CNMIMapServer
 Small web application to create choropleth maps of the CNMI serverside.
 
