@@ -27,6 +27,8 @@ class cnmi_map(Resource):
         content = request.json
         df = pd.read_json(values)
         with open('rota_saipan_tinian.json') as f: cnmi = json.load(f)
+        #with open('cnmi.json') as f: cnmi = json.load(f) #northern islands unpopulated based on best information available to me at time of publication
+
         cnmi["features"][0]['properties']
         #max_value = 1.0 # Default setting is 1.0 as max value
         max_value = df["Value"].max()
