@@ -6,7 +6,7 @@ Simple Explaination:
 ```pip install -r requirements.txt```
 
 Full Description
-1) Git clone to a local directory from cmd.exe
+1) Git clone to a local directory from cmd.exe / terminal (Please refer to "Troubleshooting" if unable to resolve host: github.com) 
 e.g.
 ```C:\Users\username> git clone https://github.com/nickatchcc/CNMIMapServer.git```
 3) cd to the directory 
@@ -35,8 +35,9 @@ df.to_json(r'\Output_File_Location\output.json')
 ```
 
 # Troubleshooting
+Accept inbound http requests on tcp port 14515
 ```sudo iptables -A INPUT -m state --state NEW -p tcp --dport 14515 -j ACCEPT```
-
+Allow DNS queries
 ```sudo iptables -A OUTPUT -p udp -m udp --dport 53 -j ACCEPT```
 
 # Demo:
