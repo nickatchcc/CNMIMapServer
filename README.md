@@ -9,4 +9,4 @@ Small web application to create choropleth maps of the CNMI serverside.
 #Usage
 When the CNMIMapServer.py file is running on the server, http connections will be accepted on port XXXXX, and JSON encoded excel tables can be used to visualize data by submitting a request from your browser using the following URL format:
 
-http://localhost:5000/api/cnmi_map?json=[JSON STRING GOES HERE]
+http://localhost:5000/api/cnmi_map?json=JSON_STRING_GOES_HERE
