@@ -1,2 +1,2 @@
 # CNMIMapServer
-Create choropleth maps of the CNMI
+Small web application to create choropleth maps of the CNMI serverside.
