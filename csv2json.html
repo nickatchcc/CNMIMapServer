@@ -17,14 +17,15 @@
     <body>
 		<script>
         var urlstring = "";
+	function getJSON(){ return "/api/cnmi_map?json=" + editor.getSession().getValue();}
 		</script>
         <div id="editnav">
             <input type="file" id="openbtn" onchange="openCode(this.files)" value="Open">
-            <input type="button" id="homebtn2" onclick="window.location.href = urlstring;" value="View">
+            <input type="button" id="homebtn2" onclick= "urlstring=getJSON(); window.location.href = urlstring;" value="View">
         </div>
         <div id="editor"></div>  
-        <script src="./ace.js" type="text/javascript" charset="utf-8"></script>
-		<script src="./csv2json.js" type="text/javascript"></script>
+        <script src="/static/ace.js" type="text/javascript" charset="utf-8"></script>
+	<script src="/static/csv2json.js" type="text/javascript"></script>
         <script src="http://ajaxorg.github.io/ace-builds/src/ext-modelist.js" type="text/javascript" charset="utf-8"></script>
         <script>
             var editor = ace.edit("editor", {
@@ -39,7 +40,7 @@
                 reader.onload = function() {
                     editor.session.setValue(JSON.stringify(CSVJSON.csv2json(reader.result, {parseNumbers: false, separator: ','}),null,2));
 					urlstring = "/api/cnmi_map?json=" + JSON.stringify(CSVJSON.csv2json(reader.result, {parseNumbers: false, separator: ','}));
-                }  
+                }
                 reader.readAsText(file) 
             }
         </script>

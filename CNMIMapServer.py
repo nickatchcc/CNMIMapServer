@@ -12,11 +12,12 @@ import pandas as pd
 import plotly
 import plotly.express as px
 import plotly.io as pio
-plotly.io.orca.config.executable = r"C:\Users\username\AppData\Local\Programs\orca\orca.exe" # application server specific
+#plotly.io.orca.config.executable = r"C:\Users\username\AppData\Local\Programs\orca\orca.exe" # application server specific
 import datetime as d
 
 # Initialize Flask
-app = Flask('__main__', static_folder=os.path.abspath(r'C:\source\repos\CNMIMapServer'), static_url_path='') # application server specific
+app = Flask('__main__', static_folder=os.path.abspath(r'/home/ubuntu/CNMIMapServer/'), static_url_path='') # application server specific
+app._static_folder = ''
 api = Api(app)
 parser = reqparse.RequestParser()
 parser.add_argument('json')
@@ -44,18 +45,18 @@ class cnmi_map(Resource):
         fig.update_layout(autosize=True, width=1900, height=750,)
         for i in range(0, len(cnmi["features"])): 
             print(cnmi["features"][i]["properties"]["NAMELSAD"])
-        fig.write_html(r'choropleth.html')
+        fig.write_html(r'static/choropleth.html')
         self.injectJS()
 
     def get(self):
         data = parser.parse_args()
         self.map(data['json'])
-        return app.send_static_file('choropleth.html')
+        return app.send_static_file(r'static/choropleth.html')
       
     def injectJS(self): #code credit: https://stackoverflow.com/a/51171077
         a = """<script type="module">
         </script>"""        
-        with open(r'.\choropleth.html', 'r+') as f:
+        with open(r'static/choropleth.html', 'r+') as f:
             lines = f.readlines()
             for i, line in enumerate(lines):
                 if line.startswith('<body>'):
@@ -66,6 +67,7 @@ class cnmi_map(Resource):
                 f.write(line)
 
 api.add_resource(cnmi_map, '/api/cnmi_map')
+api.add_resource(home, '/')
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=14515)
